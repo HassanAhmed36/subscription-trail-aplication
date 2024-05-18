@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('stripe_price_id')->unique();
             $table->integer('trail_days')->nullable();
             $table->double('amount');
-            $table->integer('type'); // 0 - monthly , 1 - yearly , 2 - lifetime 
+            $table->integer('type'); // 0 - monthly , 1 - yearly , 2 - lifetime
             $table->boolean('enabled');
             $table->timestamps();
         });

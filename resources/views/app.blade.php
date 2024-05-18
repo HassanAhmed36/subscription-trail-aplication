@@ -9,10 +9,26 @@
 </head>
 
 <body>
-    <x-navbar></x-navbar>
-    <div>
-        <slot></slot>
+    @include('includes.navbar')
+    <div class="container pt-5">
+        @session('success')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Warning!</strong> This is a dismissible alert message.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endsession
+        @session('error')
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Warning!</strong> This is a dismissible alert message.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endsession
+        <div>
+            @yield('section')
+        </div>
     </div>
+    @stack('script')
+    
 </body>
 
 </html>

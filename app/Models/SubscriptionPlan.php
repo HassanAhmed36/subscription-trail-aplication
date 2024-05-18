@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class SubscriptionPlan extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'stripe_price_id',
+        'trail_days',
+        'amount',
+        'type',
+        'enabled',
+        'is_subscribed'
+    ];
 }
